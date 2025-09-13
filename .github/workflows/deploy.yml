@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: "20"
       # Pick your own package manager and build script
-      - run: npm install
-      - run: NUXT_APP_BASE_URL=/portfolio/ npx nuxt build --preset github_pages
+      - run: pnpm install --frozen-lockfile
+      - run: NUXT_APP_BASE_URL=/portfolio/ pnpm nuxt build --preset github_pages
         env:
           NUXT_APP_BASE_URL: /portfolio/
       - name: Upload artifact
